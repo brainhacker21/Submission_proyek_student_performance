@@ -1,32 +1,25 @@
-# Proyek Akhir: Menyelesaikan Permasalahan Human Resources
-
+# Proyek Akhir: Menyelesaikan Permasalahan Institusi Pendidikan
+ 
 ## Business Understanding
-Jaya Jaya Maju adalah perusahaan multinasional yang telah berdiri sejak tahun 2000 dan kini memiliki lebih dari 1000 karyawan yang tersebar di seluruh penjuru negeri. Sebagai perusahaan yang sudah cukup besar, Jaya Jaya Maju menghadapi tantangan dalam mengelola sumber daya manusia (SDM) yang berdampak pada tingkat pergantian karyawan yang cukup tinggi.
-
+Jaya Jaya Institut adalah institusi pendidikan tinggi yang telah memasuki tahun ke-22 sejak didirikan pada tahun 2000. Institusi ini telah berhasil melahirkan banyak lulusan yang sangat baik selama lebih dari dua dekade dan telah membangun reputasi baik di berbagai bidang. Namun, seperti institusi pendidikan lain, Jaya Jaya Institut menghadapi masalah besar yang terkait dengan sejumlah siswa yang tidak menyelesaikan program studinya atau yang dikenal sebagai dropout. Masalah ini sangat penting bagi pertumbuhan dan perkembangan institusi, karena rekor dropouts mempengaruhi citra institusi, kelulusan siswa, dan akhirnya prestasi dalam menggaet siswa baru untuk tahun-tahun berikutnya. Itu juga bisa menjadi tanda bahwa proses penerimaan mahasiswa, pembelajaran, dan dukungan akademik tidak memadai atau tidak layak dipertanyakan.
+ 
 ### Permasalahan Bisnis
-Walaupun perusahaan sudah berkembang pesat, Jaya Jaya Maju masih menghadapi masalah serius terkait attrition rate (rasio karyawan yang keluar). Tingkat pergantian karyawan ini telah melebihi 10%, yang dapat memengaruhi stabilitas operasional perusahaan.
-
+Jumlah dropout yang tinggi ini tentunya menjadi salah satu masalah yang besar untuk sebuah institusi pendidikan. Oleh karena itu, Jaya Jaya Institut ingin mendeteksi secepat mungkin siswa yang mungkin akan melakukan dropout sehingga dapat diberi bimbingan khusus.
+ 
 Beberapa permasalahan yang perlu diidentifikasi dan diselesaikan adalah:
-
-1. Tingginya Attrition Rate: Prosentase karyawan yang keluar terlalu tinggi, yang mengganggu kelangsungan operasional dan meningkatkan biaya rekrutmen serta pelatihan.
-
-2. Faktor Penyebab Pergantian Karyawan: Perusahaan perlu mengetahui faktor-faktor spesifik yang mempengaruhi keputusan karyawan untuk meninggalkan perusahaan, seperti usia, jenis kelamin, departemen, peran pekerjaan, status pernikahan, dan lainnya.
-
-3. Keterlibatan Karyawan: Perusahaan belum sepenuhnya memahami hubungan antara tingkat keterlibatan karyawan dengan pergantian karyawan.
-
-4. Program Retensi yang Kurang Efektif: Strategi untuk mempertahankan karyawan mungkin belum optimal, dan perlu adanya evaluasi terhadap program retensi yang ada.
+1. Bagaimana cara mendeteksi siswa yang berisiko tinggi untuk keluar dari sekolah sebelum waktu yang ditentukan?
+2. Faktor-faktor apa saja yang mempengaruhi keputusan siswa untuk berhenti sekolah?
+3. Apa langkah-langkah yang bisa diambil untuk meningkatkan retensi siswa dan memastikan lebih banyak siswa dapat menyelesaikan pendidikan mereka?
 
 ### Cakupan Proyek
-Proyek ini bertujuan untuk membantu manajer HR Jaya Jaya Maju dalam mengidentifikasi faktor-faktor yang mempengaruhi tingginya attrition rate dan memberikan wawasan yang bisa digunakan untuk memperbaiki program retensi karyawan. Berikut adalah cakupan proyeknya:
+1. Analisis Data: Menggunakan data yang tersedia untuk mengidentifikasi faktor-faktor utama yang berkontribusi pada kejadian dropout.
+2. Visualisasi & Pelaporan: Membangun dashboard yang memungkinkan pemantauan dan analisis faktor-faktor tersebut dengan cara yang mudah dipahami.
+3. Rekomendasi & Intervensi: Berdasarkan temuan analisis, memberikan saran untuk langkah-langkah yang bisa diambil untuk mengurangi tingkat dropout.
 
-1. Pengumpulan dan Persiapan Data: Mengumpulkan data karyawan yang relevan, seperti usia, jenis kelamin, departemen, jabatan, status pernikahan, dan status pergantian (attrition).
-2. Analisis Faktor-faktor yang Mempengaruhi Attrition: Menggunakan analisis data untuk mengidentifikasi faktor-faktor yang paling berpengaruh terhadap tingkat pergantian karyawan.
-3. Pembuatan Business Dashboard: Membuat dashboard interaktif di Metabase untuk memvisualisasikan data karyawan, seperti attrition rate berdasarkan usia, jenis kelamin, jabatan, departemen, dan faktor-faktor lainnya.
-4. Rekomendasi Program Retensi: Berdasarkan hasil analisis, memberikan rekomendasi yang dapat membantu perusahaan mengurangi tingkat pergantian karyawan, seperti peningkatan program kesejahteraan, pengembangan karir, dan kebijakan kerja fleksibel.
-
+ 
 ### Persiapan
-Sumber Data: [Link Sumber Data](https://github.com/dicodingacademy/dicoding_dataset/tree/main/employee)
-
+Sumber Data: [Link Sumber Data](https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/README.md)
+ 
 Setup Lingkungan:
 a. Menyiapkan Environment Conda:
 Buat Environment Conda Baru:
@@ -34,9 +27,9 @@ Buat Environment Conda Baru:
 ```
 conda create --name myenv python=3.12
 ```
-
+ 
 2. Aktifkan Environment Conda:
-
+ 
 Untuk pengguna MacOS:
 ```
 conda activate myenv
@@ -45,35 +38,35 @@ Untuk pengguna Windows:
 ```
 conda activate myenv
 ```
-
+ 
 3. Install Requirements:
 Install semua dependensi yang terdaftar dalam file requirements.txt:
 ```
 pip install -r requirements.txt
 ```
-
+ 
 b. Menyiapkan Metabase:
 1. Pull Image Docker Metabase:
 Untuk mengunduh versi terbaru dari Metabase menggunakan Docker, jalankan perintah:
 ```
 docker pull metabase/metabase:v0.46.4
 ```
-
+ 
 2. Jalankan Metabase dengan Docker:
 Untuk menjalankan Metabase di port 3000, gunakan perintah:
 ```
 docker run -p 3000:3000 --name metabase metabase/metabase
 ```
-
+ 
 3. Akses Metabase:
 Buka browser dan akses Metabase pada alamat berikut:
 ```
 http://localhost:3000/setup
 ```
-
+ 
 4. Ikuti petunjuk untuk menyelesaikan proses setup Metabase.
-
-
+ 
+ 
 c. Menyiapkan Database (Supabase):
 1. Buat Akun dan Login ke Supabase:
 - Daftarkan akun dan masuk ke dasbor Supabase melalui [tautan ini](https://supabase.com/dashboard/sign-in).
@@ -85,36 +78,64 @@ c. Menyiapkan Database (Supabase):
 Gunakan SQLAlchemy untuk mengirim dataset ke database dengan kode berikut:
 ```
 from sqlalchemy import create_engine
-URL = "postgresql://postgres.zwnbxcaeqrgvrwicwjrt:qXg1oUaAjmFE93oN@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres"
+URL = "postgresql://postgres.mcvvlagsohvgmcldxopr:hKoXydPQB9vPaF1P@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres"
 engine = create_engine(URL)
 df.to_sql('employee', engine)
 ```
-
+ 
 Dengan langkah-langkah ini, Anda dapat menyiapkan environment, Metabase, dan Supabase untuk mulai bekerja dengan data dan membuat dashboard interaktif.
-
+ 
 ## Business Dashboard
-Dashboard ini dirancang untuk memberikan wawasan kepada tim HR mengenai faktor-faktor yang mempengaruhi keputusan karyawan untuk mengundurkan diri. Dengan visualisasi interaktif, dashboard ini memungkinkan tim HR untuk:
-1. Melihat jumlah total karyawan dan karyawan aktif.
-2. Menganalisis rata-rata usia karyawan yang keluar dan mengidentifikasi kelompok usia yang lebih rentan terhadap pergantian.
-3. Menghitung attrition rate dan menganalisis distribusi pergantian berdasarkan usia, jenis kelamin, departemen, status pernikahan, dan peran pekerjaan.
-4. Membantu tim HR untuk mengidentifikasi area dengan tingkat pergantian tinggi dan fokus pada strategi retensi yang lebih efektif.
+Dashboard ini dirancang untuk memberikan wawasan yang lebih jelas kepada institut mengenai faktor-faktor yang mempengaruhi keputusan siswa dalam status mereka, seperti dropout, terdaftar, atau lulus. Dengan fitur visualisasi yang interaktif, dashboard ini memungkinkan institut untuk:
 
-![Business_Dashboard_1](auric_21_dashboard_1.png)
-![Business_Dashboard_2](auric_21_dashboard_2png)
+1. Memantau Jumlah Siswa Berdasarkan Status Mereka:
+Melalui visualisasi data, dashboard ini memungkinkan tim untuk memantau jumlah siswa yang mengalami dropout, yang terdaftar, dan yang lulus. Ini memberikan gambaran yang jelas mengenai status siswa secara keseluruhan dalam institusi.
 
+2. Menganalisis Distribusi Dropout Berdasarkan Faktor-Faktor Penting:
+Dashboard ini juga memungkinkan analisis lebih lanjut mengenai faktor-faktor yang mempengaruhi keputusan siswa untuk dropout, seperti biaya pendidikan, status beasiswa, usia saat pendaftaran, status pernikahan, dan lain-lain. Ini memberikan wawasan mengenai kelompok siswa mana yang lebih rentan untuk dropout dan faktor-faktor sosial atau ekonomi apa yang mempengaruhi keputusan mereka.
+
+3. Melihat Persentase Siswa dalam Setiap Kategori:
+Melalui visualisasi yang menunjukkan persentase siswa yang termasuk dalam kategori dropout, terdaftar, dan lulus, tim dapat dengan mudah mengidentifikasi tren dan pola dalam status siswa. Ini juga memungkinkan perbandingan antar kategori secara langsung.
+
+4. Identifikasi Faktor-Faktor yang Memengaruhi Dropout:
+Dengan grafik yang menghubungkan berbagai faktor, seperti pemegang beasiswa atau status keuangan, tim dapat lebih mudah mengidentifikasi faktor yang paling berpengaruh terhadap keputusan siswa untuk keluar dari institusi. Ini memberikan informasi yang berguna untuk mengambil langkah-langkah intervensi yang lebih tepat sasaran.
+
+![Business_Dashboard_1](auric_21_dashboard1.png)
+![Business_Dashboard_2](auric_21_dashboard2.png)
+![Business_Dashboard_3](auric_21_dashboard3.png)
+ 
+## Menjalankan Sistem Machine Learning
+Pada proyek ini, sebuah prototype telah disediakan untuk melakukan prediksi berdasarkan model yang telah dikembangkan. Untuk menjalankan prototype secara lokal, gunakan perintah berikut di terminal: streamlit run app.py.
+dapat diakses secara publik [link streamlit sistem machine learning](https://submissionproyekstudentperformance-auric.streamlit.app/)
+
+ 
+ 
 ## Conclusion
-Dengan menggunakan dashboard ini, tim HR Jaya Jaya Maju dapat melakukan analisis yang lebih mendalam terhadap attrition dan mengambil langkah-langkah yang lebih tepat untuk mengurangi tingkat pergantian karyawan. Dengan informasi ini, HR dapat:
-- Fokus pada departemen atau kelompok usia tertentu yang memiliki tingkat pergantian tinggi.
-- Merancang program retensi yang lebih spesifik berdasarkan faktor-faktor seperti usia, jenis kelamin, dan status pernikahan.
-- Meningkatkan keterlibatan karyawan dengan merancang kebijakan yang dapat mengurangi kelelahan atau meningkatkan kepuasan kerja.
+Berdasarkan analisis data yang ditampilkan pada dashboard terkait status siswa, berikut adalah kesimpulan yang dapat diambil:
 
-### Rekomendasi Action Items (Optional)
+1. Usia: Siswa yang mengalami dropout mayoritas berada dalam rentang usia 15 hingga 22.5 tahun, yang menunjukkan bahwa siswa yang lebih muda, khususnya yang baru memasuki dunia pendidikan tinggi, memiliki tingkat dropout yang lebih tinggi.
 
-1. Meningkatkan Program Retensi di Departemen dengan Tingkat Pergantian Tinggi
-- Fokus pada Research & Development dan Sales, karena keduanya memiliki tingkat pergantian yang lebih tinggi.
-2. Pengembangan Kebijakan Fleksibel untuk Kelompok Usia Tertentu
-- Jika kelompok usia tertentu lebih sering mengundurkan diri, pertimbangkan untuk memberikan program pengembangan karir atau kebijakan kesejahteraan yang lebih fokus.
-3. Program Kesejahteraan untuk Meningkatkan Retensi
-- Untuk mengurangi attrition, perusahaan bisa menawarkan manfaat tambahan seperti keseimbangan kerja-hidup yang lebih baik atau jam kerja fleksibel.
+2. Biaya Pendidikan: Berdasarkan grafik "Tuition Fees by Dropout", siswa yang membayar biaya pendidikan (dengan status "Yes" pada biaya) lebih cenderung untuk mengalami dropout. Hal ini mungkin mengindikasikan bahwa masalah finansial berkontribusi terhadap keputusan untuk berhenti.
 
+3. Penerima Beasiswa: Siswa yang tidak menerima beasiswa (status "No" pada Scholarship Holder) cenderung memiliki tingkat dropout yang lebih tinggi, seperti yang terlihat pada grafik "Scholarship Holder by Dropout". Ini menunjukkan bahwa dukungan keuangan melalui beasiswa dapat menjadi faktor pendorong untuk menyelesaikan pendidikan.
+
+4. Status Pernikahan: Grafik "Marital Status" menunjukkan bahwa siswa yang belum menikah (single) lebih sering mengalami dropout dibandingkan dengan mereka yang sudah menikah. Hal ini mungkin terkait dengan tanggung jawab atau stabilitas yang berbeda antara siswa dengan status pernikahan yang berbeda.
+
+5. Status Keuangan (Debitur): Siswa yang memiliki status debitur (grafik "Debtor by Dropout") lebih cenderung untuk mengalami dropout. Ini menunjukkan bahwa masalah keuangan atau keterlambatan pembayaran dapat berkontribusi pada keputusan siswa untuk keluar.
+
+Dengan menggunakan dashboard ini, tim institusi dapat mengambil langkah-langkah strategis berdasarkan analisis yang lebih mendalam terhadap faktor-faktor yang mempengaruhi tingkat dropout siswa. Berdasarkan informasi ini, institusi dapat:
+1. Fokus pada kelompok usia tertentu atau siswa yang terhambat secara finansial untuk mengurangi tingkat dropout.
+2. Merancang program beasiswa atau dukungan finansial yang lebih luas bagi siswa yang membutuhkan.
+3. Menyusun kebijakan atau program yang mendukung siswa yang belum menikah atau yang memiliki masalah keuangan untuk meningkatkan tingkat retensi.
+ 
+### Rekomendasi Action Items
+ 
+1. Penerapan Sistem Pemantauan Siswa Berdasarkan Data:
+Mengimplementasikan model prediktif yang telah dikembangkan untuk memantau siswa secara berkala. Sistem ini dapat digunakan oleh institusi untuk mengidentifikasi siswa yang berisiko tinggi mengalami dropout dan memberikan intervensi sejak awal, seperti bimbingan akademik atau bentuk dukungan lainnya.
+
+2. Penyesuaian Kurikulum dan Program Studi:
+Melakukan evaluasi terhadap program studi dengan tingkat dropout yang tinggi dan melakukan perbaikan pada kurikulum atau metode pengajaran. Salah satu pendekatan yang bisa dilakukan adalah dengan memberikan fleksibilitas lebih pada jadwal kursus atau menyediakan materi pendukung tambahan untuk membantu meringankan beban akademik bagi siswa.
+
+3. Penguatan Program Dukungan Akademik dan Psikologis:
+Berdasarkan temuan faktor-faktor risiko, institusi perlu memperkuat program dukungan akademik dan psikologis. Hal ini bisa meliputi peningkatan akses untuk bimbingan belajar, penyediaan sesi konseling, serta dukungan kesehatan mental bagi siswa yang teridentifikasi rentan.
 
