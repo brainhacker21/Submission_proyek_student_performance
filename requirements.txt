@@ -1,0 +1,6 @@
+pandas==2.2.3
+numpy==1.26.4
+matplotlib==3.7.5
+seaborn==0.12.2
+SQLAlchemy==2.0.38
+scikit-learn==1.2.2
