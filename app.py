@@ -1,7 +1,7 @@
 import streamlit as st
 import joblib
 import numpy as np
-
+import os
 # Load the trained model
 model = joblib.load(os.path.join("model", "rdf_model.joblib"))
 scaler = joblib.load(os.path.join("model", "scaler.pkl"))
