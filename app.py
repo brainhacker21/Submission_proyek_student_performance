@@ -3,8 +3,8 @@ import joblib
 import numpy as np
 
 # Load the trained model
-model = joblib.load('./model/rdf_model.joblib')
-scaler = joblib.load('./model/scaler.pkl')
+model = joblib.load(os.path.join("model", "rdf_model.joblib"))
+scaler = joblib.load(os.path.join("model", "scaler.pkl"))
 
 # Function to make predictions
 def predict_status(inputs):
